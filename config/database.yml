@@ -11,7 +11,7 @@ development:
   <<: *default
   database: bitbot_development
 
-test:
+test: &test
   <<: *default
   database: bitbot_test
 
@@ -20,3 +20,6 @@ production:
   database: bitbot_production
   username: bitbot
   password: <%= ENV['BITBOT_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test
