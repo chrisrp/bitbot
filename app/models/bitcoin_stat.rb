@@ -1,0 +1,3 @@
+class BitcoinStat < ApplicationRecord
+
+end
