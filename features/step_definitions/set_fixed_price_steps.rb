@@ -1,5 +1,5 @@
 Given("that I want to {string}") do |value|
-  @what_i_want = value.to_sym
+  @order_config = FactoryBot.create(:order_config, operation: value)
 end
 
 Given("the current price is {float}$") do |value|
@@ -7,9 +7,9 @@ Given("the current price is {float}$") do |value|
 end
 
 When("an price check of {float}$") do |current_value|
-  if @what_i_want == :sell
+  if @order_config.operation.to_sym == :sell
     BitcoinStat.update_highest(current_value * 100)
-  elsif @what_i_want == :buy
+  elsif @order_config.operation.to_sym == :buy
     BitcoinStat.update_lowest(current_value * 100)
   end
 end

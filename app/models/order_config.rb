@@ -1,0 +1,3 @@
+class OrderConfig < ApplicationRecord
+
+end
