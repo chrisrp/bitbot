@@ -14,7 +14,7 @@ Given("the gain is greater than {string}") do |value|
 end
 
 Then("an order is placed at {float}$") do |value|
-  Order.evaluate(@order_config, BitcoinStat.last)
+  Order.evaluate(@order_config, value * 100)
   expect(Order.last.value).to eq((value*100).to_i)
 end
 
