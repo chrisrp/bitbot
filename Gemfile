@@ -40,6 +40,7 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'rspec-rails', '~> 3.7'
   gem 'factory_bot'
+  gem 'rubocop', '~> 0.58.2', require: false
 end
 
 group :test do
