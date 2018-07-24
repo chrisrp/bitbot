@@ -8,7 +8,7 @@ RSpec.describe Order do
 
   describe '.evaluate' do
     let(:order_config) { FactoryBot.build(:order_config, price: 5000, operation: :sell, alert_variation: 1.5, expected_gain: 2) }
-    let(:bitcoin_stat) { FactoryBot.create(:bitcoin_stat, price: 5200) }
+      let(:bitcoin_stat) { FactoryBot.create(:bitcoin_stat, price: 5200) }
 
     it 'creates an order' do
       bitcoin_stat
