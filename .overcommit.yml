@@ -33,7 +33,7 @@
 #    enabled: true # Generate a tags file with `ctags` each time HEAD changes
 #
 PrePush:
-  Rubocop:
+  SomeCop:
     enabled: true
     command: ['bundle', 'exec', 'rubocop'] # Invoke within Bundler context
 
