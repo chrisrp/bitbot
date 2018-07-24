@@ -35,11 +35,19 @@
 PreCommit:
   RuboCop:
     enabled: true
-    on_warn: fail
-    command: ['bundle', 'exec', 'rubocop'] # Invoke within Bundler context
+    description: 'Analyze with RuboCop x'
+    required_executable: 'rubocop'
+    flags: ['--format=emacs', '--force-exclusion', '--display-cop-names']
+    install_command: 'gem install rubocop'
+    include:
+      - '**/*.gemspec'
+      - '**/*.rake'
+      - '**/*.rb'
+      - '**/*.ru'
+      - '**/Gemfile'
+      - '**/Rakefile'
 
 PrePush:
   RSpec:
     enabled: true
     command: ['bundle', 'exec', 'rspec'] # Invoke within Bundler context
-
