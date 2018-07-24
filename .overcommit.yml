@@ -33,9 +33,9 @@
 #    enabled: true # Generate a tags file with `ctags` each time HEAD changes
 #
 PrePush:
-  SomeCop:
+  RuboCop:
     enabled: true
-    command: ['bundle', 'exec', 'rubocop'] # Invoke within Bundler context
+    on_warn: fail
 
   RSpec:
     enabled: true
