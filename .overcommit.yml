@@ -32,11 +32,12 @@
 #  IndexTags:
 #    enabled: true # Generate a tags file with `ctags` each time HEAD changes
 #
-PrePush:
+PreCommit:
   RuboCop:
     enabled: true
     on_warn: fail
 
+PrePush:
   RSpec:
     enabled: true
     command: ['bundle', 'exec', 'rspec'] # Invoke within Bundler context
